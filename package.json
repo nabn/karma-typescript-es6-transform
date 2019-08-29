@@ -1,0 +1,67 @@
+{
+  "name": "karma-typescript-es6-transform",
+  "version": "4.1.1",
+  "description": "Plugin for transforming ES2015 javascript code to to ES5 syntax.",
+  "files": [
+    "dist/**"
+  ],
+  "main": "dist/transform.js",
+  "keywords": [
+    "babel",
+    "ES2015",
+    "ES6",
+    "karma-typescript",
+    "typescript"
+  ],
+  "author": "monounity",
+  "contributors": [
+    "erikbarke"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/monounity/karma-typescript.git"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc --project tsconfig.json",
+    "lint": "tslint --project tsconfig.json",
+    "test": "nyc --require ts-node/register tape src/*.spec.ts | faucet"
+  },
+  "nyc": {
+    "extension": [
+      ".ts"
+    ],
+    "exclude": [
+      "**/*.spec.ts"
+    ],
+    "reporter": [
+      "html"
+    ],
+    "tempDir": "./coverage/.nyc_output"
+  },
+  "dependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "acorn": "^7.0.0",
+    "acorn-walk": "^7.0.0",
+    "log4js": "^5.1.0",
+    "magic-string": "^0.25.1"
+  },
+  "devDependencies": {
+    "@types/babel__core": "^7.1.2",
+    "@types/karma": "^3.0.1",
+    "@types/lodash": "^4.14.120",
+    "@types/node": "^12.7.2",
+    "@types/sinon": "^7.0.5",
+    "@types/tape": "^4.2.33",
+    "faucet": "0.0.1",
+    "karma-typescript": "4.1.1",
+    "nyc": "^14.1.1",
+    "sinon": "^7.2.3",
+    "tape": "^4.9.2",
+    "ts-node": "^8.0.2",
+    "tslint": "^5.12.1",
+    "tslint-eslint-rules": "^5.4.0",
+    "typescript": "latest"
+  }
+}
